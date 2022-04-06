@@ -1,0 +1,19 @@
+music app where a user can review songs and view ratings
+
+reservations app
+
+BDO boss tracker / cooking tool
+
+continuation of bubble project
+
+jog/running tracker/planner/goals
+
+wedding planner
+
+shopping assistant
+
+carbon footprint calculator / tips
+
+weather/storm warning/planning app
+
+pet diet tracker

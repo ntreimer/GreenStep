@@ -1,0 +1,17 @@
+body {
+    background-image: url('https://www.thespruce.com/thmb/IF1LXba3BUsl3_bD7N6R6lywOu8=/941x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/types-of-leaf-arrangements-3269814-03-a6b9b4775c5b47b79e14aed9a7e6ac90.jpg');
+
+}
+
+#my-navbar {
+    background-color: #539e8a;
+}
+
+.button-area {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}

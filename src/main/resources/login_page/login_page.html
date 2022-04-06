@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-box">
+        <img src="../GreenStep-logos/GreenStep-logos_transparent_green.png" alt="" srcset="" width="100 px">
+        <form action="../home_page/index.html">
+                <!-- email must have characters@characters.domain
+                after "." sign, two more chars from a to z -->
+                <input type="email" name="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <!-- password must be 8 or more characters -->
+                <input type="password" name="password" id="password" placeholder="Password" pattern=".{8,}">
+            <button type="submit" id="login-button" onclick="validateLogin(event)">LOGIN</button>
+        </form>
+        <a href="" id="forgot-password">Forgot password?</a>
+    </div>
+    <script src="login_script.js"></script>
+</body>
+</html>
