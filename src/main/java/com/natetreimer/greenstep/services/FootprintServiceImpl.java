@@ -3,10 +3,12 @@ package com.natetreimer.greenstep.services;
 import com.natetreimer.greenstep.models.Footprint;
 import com.natetreimer.greenstep.repositories.FootprintRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class FootprintServiceImpl implements FootprintService {
 
     @Autowired
@@ -35,7 +37,7 @@ public class FootprintServiceImpl implements FootprintService {
     }
 
     @Override
-    public void deleteFootprintById(Footprint footprint) {
-
+    public void deleteFootprintById(Long id) {
+        this.footprintRepository.deleteById(id);
     }
 }

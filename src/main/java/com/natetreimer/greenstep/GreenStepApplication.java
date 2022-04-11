@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GreenstepApplication {
+public class GreenStepApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GreenstepApplication.class, args);
+		SpringApplication.run(GreenStepApplication.class, args);
 	}
 
 }

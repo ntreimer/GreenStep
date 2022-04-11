@@ -1,8 +1,10 @@
 package com.natetreimer.greenstep.services;
 
 import com.natetreimer.greenstep.models.Footprint;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 public interface FootprintService {
 
@@ -12,6 +14,6 @@ public interface FootprintService {
 
     Footprint getFootprintById(Long id);
 
-    void deleteFootprintById(Footprint footprint);
+    void deleteFootprintById(Long id);
 
 }

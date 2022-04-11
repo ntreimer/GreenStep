@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,7 +11,7 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" th:href="@{/styles/index.css}" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="my-navbar">
       <a class="navbar-brand" href="../home_page/index.html"
         ><img
-          src="../GreenStep-logos/GreenStep-logos_black.png"
+          th:src="@{/GreenStep-logos/GreenStep-logos_black.png}"
           alt=""
           srcset=""
           width="50 px"
@@ -67,7 +67,7 @@
               Calculate Footprint
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../house_calculator_page/house_calculator.html">House</a>
+              <a class="dropdown-item" th:href="@{/footprint}" >House</a>
               <a class="dropdown-item" href="#">Car</a>
               <a class="dropdown-item" href="#">Flights</a>
               <div class="dropdown-divider"></div>
@@ -144,5 +144,6 @@
             
           </div>
         <script src="script.js"></script>
+
   </body>
 </html>

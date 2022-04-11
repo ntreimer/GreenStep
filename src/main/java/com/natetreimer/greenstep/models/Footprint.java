@@ -16,15 +16,15 @@ public class Footprint {
     private Long year;
 
     @Column
-    private Double footprint;
+    private Double weight;
 
     public Footprint() {
     }
 
-    public Footprint(Long id, Long year, Double footprint) {
+    public Footprint(Long id, Long year, Double weight) {
         this.id = id;
         this.year = year;
-        this.footprint = footprint;
+        this.weight = weight;
     }
 
     public Long getId() {
@@ -43,11 +43,11 @@ public class Footprint {
         this.year = year;
     }
 
-    public Double getFootprint() {
-        return footprint;
+    public Double getWeight() {
+        return weight;
     }
 
-    public void setFootprint(Double footprint) {
-        this.footprint = footprint;
+    public void setWeight(Double weight) {
+        this.weight = weight;
     }
 }
