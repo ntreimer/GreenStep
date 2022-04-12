@@ -3,7 +3,6 @@ package com.natetreimer.greenstep.controllers;
 import com.natetreimer.greenstep.models.Footprint;
 import com.natetreimer.greenstep.services.FootprintService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -57,6 +56,8 @@ public class FootprintController {
         model.addAttribute("footprint", footprint);
         return "update_footprint";
     }
+
+
 
     @GetMapping("/deleteFootprint/{id}")
     public String deleteFootprint(@PathVariable(value = "id") Long id) {

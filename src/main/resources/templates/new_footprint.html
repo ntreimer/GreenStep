@@ -13,13 +13,13 @@
     <h2>Calculate Footprint</h2>
 
     <form action="#" th:action="@{/saveFootprint}" th:object="${footprint}" method="POST">
-        <select th:field="*{year}" id="year-dropdown">
-            <option th:value="1" th:text="1">1</option>
-            <option th:value="2" th:text="2">2</option>
+        <select id="year" name="year">
+            <option th:each="i : ${#numbers.sequence(2000, 2022)}" th:value="${i}" th:text="${i}" th:selected="${i==2022}"></option>
         </select>
         <input type="text" th:field="*{weight}" placeholder="Weight" class="form-control mb-4 col-4">
-        <button type="submit" class="btn btn-info col-2"> Save Footprint</button>
+        <button type="submit" class="btn btn-info col-2"> Save Footprint </button>
     </form>
+    <table></table>
     <hr>
     <a th:href="@{/}"> Back to Footprints </a>
 </div>
