@@ -28,7 +28,6 @@
             th:selected="${i==2022}"
           ></option>
         </select>
-
         <table>
           <tr>
             <td>Electricity</td>
@@ -59,11 +58,27 @@
         <button onclick="calculateFootprint(event);">
           Calculate Footprint
         </button>
-        <button type="submit" class="btn btn-info col-2">Save Footprint</button>
       </form>
-      <h2>Total:</h2>
       <hr />
       <a th:href="@{/}"> Back to Footprints </a>
+    </div>
+    <div id="totalDiv">
+      <h2>Footprint total:</h2>
+      <form
+        action="#"
+        th:action="@{/saveFootprint}"
+        th:object="${footprint}"
+        method="POST"
+      >
+        <input type="hidden" id="total-year" th:field="*{year}" />
+        <input
+          type="number"
+          name="footprint-total"
+          id="footprint-total"
+          th:field="*{weight}"
+        />
+        <button type="submit" class="btn btn-info col-2">Save Footprint</button>
+      </form>
     </div>
     <script th:src="@{/js/new_footprint.js}"></script>
   </body>

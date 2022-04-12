@@ -12,12 +12,15 @@
 
 function calculateFootprint(e) {
     e.preventDefault();
-    let electricity = document.getElementById("electricity").value;
-    let naturalGas = document.getElementById("natural-gas").value;
-    let heatingOil = document.getElementById("heating-oil").value;
-    let coal = document.getElementById("coal").value;
-    let propane = document.getElementById("propane").value;
+    let year = Number(document.getElementById("year").value);
+    let electricity = Number(document.getElementById("electricity").value);
+    let naturalGas = Number(document.getElementById("natural-gas").value);
+    let heatingOil = Number(document.getElementById("heating-oil").value);
+    let coal = Number(document.getElementById("coal").value);
+    let propane = Number(document.getElementById("propane").value);
+    let total = document.getElementById("footprint-total");
+    let totalYear = document.getElementById("total-year");
 
-
-    console.log(electricity, naturalGas, heatingOil, coal, propane);
+    totalYear.value = year;
+    total.value = electricity + naturalGas + heatingOil + coal + propane;
 }
