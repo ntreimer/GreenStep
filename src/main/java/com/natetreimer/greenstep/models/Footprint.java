@@ -15,7 +15,7 @@ public class Footprint {
     @Column(nullable = false)
     private Long year;
 
-    @Column
+    @Column(nullable = false)
     private Double weight;
 
     public Footprint() {
