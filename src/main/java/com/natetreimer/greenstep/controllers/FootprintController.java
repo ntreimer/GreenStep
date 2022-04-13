@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.naming.Binding;
 import javax.validation.Valid;
 
@@ -17,12 +16,6 @@ public class FootprintController {
 
     @Autowired
     private FootprintService footprintService;
-
-    @RequestMapping(value="/")
-    public String getHomePage() {
-        return "index";
-    }
-
 
     @GetMapping("/footprint")
     public String viewFootprints(Model model) {
@@ -46,18 +39,16 @@ public class FootprintController {
         return "redirect:/footprint";
     }
 
-    @GetMapping("/showFormForUpdate/{id}")
+    @GetMapping("/updateFootprint/{id}")
     public String showFormForUpdate(@PathVariable(value = "id") Long id, Model model) {
 
-        // get employee from the service
+        // get footprint from the service
         Footprint footprint = footprintService.getFootprintById(id);
 
-        // set employee as a model attribute to pre-populate the form
+        // set footprint as a model attribute to pre-populate the form
         model.addAttribute("footprint", footprint);
         return "update_footprint";
     }
-
-
 
     @GetMapping("/deleteFootprint/{id}")
     public String deleteFootprint(@PathVariable(value = "id") Long id) {
