@@ -19,6 +19,7 @@ public class FootprintController {
 
     @GetMapping("/footprint")
     public String viewFootprints(Model model) {
+        System.out.println("inside footprint");
         model.addAttribute("listFootprints", footprintService.getAllFootprints());
         return "footprint";
     }
