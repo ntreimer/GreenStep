@@ -1,6 +1,10 @@
 
 ## Daily Progress
 
+April 15th (54% done)
+* Joined Footprint and User models, so footprints can be attributed to the logged-in user
+* Attempted to create a custom query
+
 April 14th (50% done)
 * Added models for checklist and journal
 * Added registration and security
