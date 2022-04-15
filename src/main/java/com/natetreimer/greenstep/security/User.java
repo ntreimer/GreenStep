@@ -1,4 +1,6 @@
-package com.natetreimer.greenstep.models;
+package com.natetreimer.greenstep.security;
+
+import com.natetreimer.greenstep.models.Footprint;
 
 import javax.persistence.*;
 import java.util.Collection;

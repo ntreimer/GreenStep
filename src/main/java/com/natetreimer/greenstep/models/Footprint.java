@@ -1,5 +1,7 @@
 package com.natetreimer.greenstep.models;
 
+import com.natetreimer.greenstep.security.User;
+
 import javax.persistence.*;
 
 

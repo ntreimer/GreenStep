@@ -1,6 +1,5 @@
-package com.natetreimer.greenstep.repositories;
+package com.natetreimer.greenstep.security;
 
-import com.natetreimer.greenstep.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

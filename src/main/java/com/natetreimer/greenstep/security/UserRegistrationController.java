@@ -1,8 +1,8 @@
-package com.natetreimer.greenstep.controllers;
+package com.natetreimer.greenstep.security;
 
-import com.natetreimer.greenstep.models.User;
+import com.natetreimer.greenstep.security.User;
 import com.natetreimer.greenstep.security.UserRegistrationDto;
-import com.natetreimer.greenstep.services.UserService;
+import com.natetreimer.greenstep.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

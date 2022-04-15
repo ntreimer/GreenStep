@@ -1,4 +1,4 @@
-package com.natetreimer.greenstep.models;
+package com.natetreimer.greenstep.security;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

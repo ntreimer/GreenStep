@@ -1,9 +1,5 @@
-package com.natetreimer.greenstep.services;
+package com.natetreimer.greenstep.security;
 
-import com.natetreimer.greenstep.models.Role;
-import com.natetreimer.greenstep.models.User;
-import com.natetreimer.greenstep.repositories.UserRepository;
-import com.natetreimer.greenstep.security.UserRegistrationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
