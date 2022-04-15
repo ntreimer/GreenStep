@@ -9,8 +9,12 @@ public class Footprint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "footprint_id", nullable = false)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 
     @Column(nullable = false)
     private Long year;
@@ -21,8 +25,9 @@ public class Footprint {
     public Footprint() {
     }
 
-    public Footprint(Long id, Long year, Double weight) {
+    public Footprint(Long id, User user, Long year, Double weight) {
         this.id = id;
+        this.user = user;
         this.year = year;
         this.weight = weight;
     }
@@ -33,6 +38,14 @@ public class Footprint {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Long getYear() {

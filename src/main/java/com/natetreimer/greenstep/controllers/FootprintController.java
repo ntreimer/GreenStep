@@ -1,6 +1,8 @@
 package com.natetreimer.greenstep.controllers;
 
 import com.natetreimer.greenstep.models.Footprint;
+import com.natetreimer.greenstep.models.User;
+import com.natetreimer.greenstep.repositories.UserRepository;
 import com.natetreimer.greenstep.services.FootprintService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.naming.Binding;
 import javax.validation.Valid;
+import java.security.Principal;
 
 
 @Controller
@@ -16,6 +19,11 @@ public class FootprintController {
 
     @Autowired
     private FootprintService footprintService;
+
+    private UserRepository userRepository;
+    private FootprintController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @GetMapping("/footprint")
     public String viewFootprints(Model model) {
@@ -32,10 +40,12 @@ public class FootprintController {
     }
 
     @PostMapping("/saveFootprint")
-    public String saveFootprint(@ModelAttribute("footprint") @Valid Footprint footprint, BindingResult bindingResult) {
+    public String saveFootprint(@ModelAttribute("footprint") @Valid Footprint footprint, Principal principal, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             return "new_footprint";
         }
+        User user = userRepository.findByEmail(principal.getName());
+        footprint.setUser(user);
         footprintService.saveFootprint(footprint);
         return "redirect:/footprint";
     }

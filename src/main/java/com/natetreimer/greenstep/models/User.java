@@ -2,6 +2,7 @@ package com.natetreimer.greenstep.models;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
@@ -24,6 +25,9 @@ public class User {
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Footprint> footprints;
 
     public User() {
     }
