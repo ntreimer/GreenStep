@@ -101,6 +101,7 @@
       </thead>
       <tbody>
         <tr th:each="footprint : ${listFootprints}">
+<!--          <td th:text="${footprint.user_id}"></td>-->
           <td th:text="${footprint.user.id}"></td>
           <td th:text="${footprint.year}"></td>
           <td>

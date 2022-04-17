@@ -55,12 +55,11 @@ public class FootprintServiceImpl implements FootprintService {
 
         // find courses where student email matches
         Query query = session.createQuery(
-                "SELECT f FROM Footprint f"
-//                "SELECT f FROM Footprint f " +
-//                        "where user_id=:userIdParam"
+                "SELECT f FROM Footprint f " +
+                        "where user_id=:userIdParam"
 
         );
-//        query.setParameter("userIdParam", id.toString());
+        query.setParameter("userIdParam", id.toString());
 
         List<Footprint> footprints = query.getResultList();
 
