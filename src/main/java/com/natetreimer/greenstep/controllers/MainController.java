@@ -23,3 +23,8 @@ public class MainController {
     }
 
 }
+
+
+// room 1
+// registration randomly fails from foreign key failure -- will not focus
+// being sick
