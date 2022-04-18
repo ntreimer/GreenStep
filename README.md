@@ -18,6 +18,11 @@ GreenStep is a web-based application for users who wish to calculate their carbo
 
 ## Daily Progress
 
+April 18th (60% done)
+* refactored getFootprintsByUserId to @Query annotation
+* created view and sql for checklist
+* added navbar to some pages
+
 April 15th (54% done)
 * Joined Footprint and User models, so footprints can be attributed to the logged-in user
 * Attempted to create a custom query
