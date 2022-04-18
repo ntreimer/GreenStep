@@ -1,6 +1,7 @@
 package com.natetreimer.greenstep.controllers;
 
 
+import com.natetreimer.greenstep.services.ChecklistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +14,12 @@ import javax.validation.Valid;
 @Controller
 public class ChecklistController {
 
-//    @Autowired
-//    private ChecklistService checklistService;
+    @Autowired
+    private ChecklistService checklistService;
 
     @GetMapping("/checklist")
     public String viewChecklist(Model model) {
-//        model.addAttribute("listChecklists", checklistService.getAllChecklists());
+        model.addAttribute("listChecklists", checklistService.getAllChecklists());
         return "checklist";
     }
 

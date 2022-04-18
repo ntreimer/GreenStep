@@ -27,7 +27,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/img/**",
                         "/webjars/**").permitAll()
                 .mvcMatchers("/login").permitAll()
-                .mvcMatchers("/deleteSomething/**").hasAnyRole("ADMIN")
+                .mvcMatchers("/footprint/**").hasAnyRole("USER","ADMIN")
+                .mvcMatchers("/checklist/**").hasAnyRole("USER","ADMIN")
+                .mvcMatchers("/journal/**").hasAnyRole("USER","ADMIN")
+                .mvcMatchers("/editJournal/**").hasAnyRole("ADMIN")
                 .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
                 .and()

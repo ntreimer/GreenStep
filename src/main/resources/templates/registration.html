@@ -6,29 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" type="text/css"
-          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
-
-    <title>com.example.demo.security.User Registration</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" th:href="@{/styles/index.css}" />
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+    ></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span> <span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span
-                    class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" th:href="@{/}">Registration and
-                Login Module</a>
+<nav class="navbar navbar-expand-lg navbar-light" id="my-navbar">
+    <a class="navbar-brand" href="redirect:/"
+    ><img
+            th:src="@{/GreenStep-logos/GreenStep-logos_black.png}"
+            alt=""
+            srcset=""
+            width="50 px"
+    /></a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/footprint}">Calculate Footprint</a>
+            </li>
+            <!--          <li class="nav-item dropdown">-->
+            <!--            <a-->
+            <!--              class="nav-link dropdown-toggle"-->
+            <!--              href="#"-->
+            <!--              id="navbarDropdown"-->
+            <!--              role="button"-->
+            <!--              data-toggle="dropdown"-->
+            <!--              aria-haspopup="true"-->
+            <!--              aria-expanded="false"-->
+            <!--            >-->
+            <!--              Calculate Footprint-->
+            <!--            </a>-->
+            <!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+            <!--              <a class="dropdown-item" th:href="@{/footprint}" >House</a>-->
+            <!--              <a class="dropdown-item" href="#">Car</a>-->
+            <!--              <a class="dropdown-item" href="#">Flights</a>-->
+            <!--              <div class="dropdown-divider"></div>-->
+            <!--              <a class="dropdown-item" href="#">Totals</a>-->
+            <!--            </div>-->
+            <!--          </li>-->
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/checklist}">Checklist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/journal}">Journal</a>
+            </li>
+        </ul>
+        <div class="form-inline nav-item">
+            <a th:href="@{/logout}" class="nav-link" id="logout-button"> Log out </a>
         </div>
     </div>
 </nav>
-
-<br>
+<br />
 <br>
 
 <div class="container">

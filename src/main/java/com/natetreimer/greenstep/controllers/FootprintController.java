@@ -27,9 +27,7 @@ public class FootprintController {
 
     @GetMapping("/footprint")
     public String viewFootprints(Principal principal, Model model) {
-        System.out.println("inside footprint");
         User user = userRepository.findByEmail(principal.getName());
-        System.out.println(footprintService.getFootprintsByUserId(user.getId()).getClass().getSimpleName());
         model.addAttribute("listFootprints", footprintService.getFootprintsByUserId(user.getId()));
 
         return "footprint";

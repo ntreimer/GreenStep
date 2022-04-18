@@ -17,4 +17,5 @@ public interface FootprintService {
     void deleteFootprintById(Long id);
 
     List<Footprint> getFootprintsByUserId(Long id);
+
 }

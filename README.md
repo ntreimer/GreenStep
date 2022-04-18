@@ -1,3 +1,20 @@
+# GreenStep
+
+GreenStep is a web-based application for users who wish to calculate their carbon footprint and want to look for ways to improve it.
+
+## Contents
+
+- [Daily Progress](#Daily-Progess)
+- [User Stories](#User-Stories)
+    - [User](#User)
+    - [Admin](#Admin)
+- [Technical Architecture](https://www.diagramlink.com)
+    - this will show technologies used at each level
+- [Technical challenges](#Technical-challenges)
+- [Lessons learned from this project](#Lessons-learned)
+- [Wireframe](linktodiagram)
+- [Schema diagram](linktoschema)
+- [Jira](https://www.google.com/) - Please contact [Nate Treimer](mailto:natetreimer@gmail.com) for accessing this Jira account
 
 ## Daily Progress
 
@@ -21,3 +38,9 @@ April 12th (41% done)
 April 11th (35% done)
 * Git init
 * CRUD working, needs tweaking
+
+## User Stories
+
+## Technical Challenges
+
+## Lessons Learned

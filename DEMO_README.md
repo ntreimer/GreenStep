@@ -1,5 +1,5 @@
 
-## Food catering app
+# Your app name
 
 Add some description of the app (one or two paragraph)
 
@@ -20,20 +20,19 @@ Add some description of the app (one or two paragraph)
 
 ## Daily Progress
 - April 15th (80% done)
-    - Added ADMIN, SUPERADMIN roles and have permission set for "/users" as accessible by SUPERADMIN and "/menu" and
+    - Added x feature
 
 
 ### Login
-- As an admin, I want to log in with an admin privilege so that I can edit the list of items in the menu, update
-  the price, etc.
+- As an admin, I want to x so that y
     - Tasks:
-        1. Create a database and a User table containing username, password and privilege.
-        2. Login screen asking for username and password.
+        1. Create a ...
+        2. Login screen ...
         
-- As a user, I want to log in with a user privilege so that I can do basic operations like entering a customer's order.
+- As a user, I want to log x so that y
     - Tasks:
-        1. Same as for admin login a-e
-        2. If login is successful, show the screen for ordering.
+        1. Same as ...
+        2. If login is successful ...
 
 ## User Stories
 
