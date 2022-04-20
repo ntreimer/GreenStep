@@ -8,7 +8,7 @@ GreenStep is a web-based application for users who wish to calculate their carbo
 - [User Stories](#User-Stories)
     - [User](#User)
     - [Admin](#Admin)
-- [Technical Architecture](https://www.diagramlink.com)
+- [Technical Architecture](GreenStep_Technical_Architecture.jpg)
     - this will show technologies used at each level
 - [Technical challenges](#Technical-challenges)
 - [Lessons learned from this project](#Lessons-learned)
