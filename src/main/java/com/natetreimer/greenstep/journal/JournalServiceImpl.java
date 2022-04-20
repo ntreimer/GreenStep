@@ -1,7 +1,8 @@
-package com.natetreimer.greenstep.services;
+package com.natetreimer.greenstep.journal;
 
-import com.natetreimer.greenstep.models.Journal;
-import com.natetreimer.greenstep.repositories.JournalRepository;
+import com.natetreimer.greenstep.journal.Journal;
+import com.natetreimer.greenstep.journal.JournalRepository;
+import com.natetreimer.greenstep.journal.JournalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

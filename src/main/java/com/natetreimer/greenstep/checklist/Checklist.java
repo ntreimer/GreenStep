@@ -1,4 +1,4 @@
-package com.natetreimer.greenstep.models;
+package com.natetreimer.greenstep.checklist;
 
 import com.natetreimer.greenstep.security.User;
 

@@ -1,6 +1,6 @@
-package com.natetreimer.greenstep.repositories;
+package com.natetreimer.greenstep.journal;
 
-import com.natetreimer.greenstep.models.Journal;
+import com.natetreimer.greenstep.journal.Journal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

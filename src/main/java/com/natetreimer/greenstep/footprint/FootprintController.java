@@ -1,9 +1,9 @@
-package com.natetreimer.greenstep.controllers;
+package com.natetreimer.greenstep.footprint;
 
-import com.natetreimer.greenstep.models.Footprint;
+import com.natetreimer.greenstep.footprint.Footprint;
 import com.natetreimer.greenstep.security.User;
 import com.natetreimer.greenstep.security.UserRepository;
-import com.natetreimer.greenstep.services.FootprintService;
+import com.natetreimer.greenstep.footprint.FootprintService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +20,8 @@ public class FootprintController {
     @Autowired
     private FootprintService footprintService;
 
+    @Autowired
     private UserRepository userRepository;
-    private FootprintController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @GetMapping("/footprint")
     public String viewFootprints(Principal principal, Model model) {

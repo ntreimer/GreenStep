@@ -1,7 +1,6 @@
-package com.natetreimer.greenstep.services;
+package com.natetreimer.greenstep.footprint;
 
-import com.natetreimer.greenstep.models.Footprint;
-import org.springframework.stereotype.Service;
+import com.natetreimer.greenstep.footprint.Footprint;
 
 import java.util.List;
 

@@ -1,7 +1,8 @@
-package com.natetreimer.greenstep.services;
+package com.natetreimer.greenstep.footprint;
 
-import com.natetreimer.greenstep.models.Footprint;
-import com.natetreimer.greenstep.repositories.FootprintRepository;
+import com.natetreimer.greenstep.footprint.Footprint;
+import com.natetreimer.greenstep.footprint.FootprintRepository;
+import com.natetreimer.greenstep.footprint.FootprintService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

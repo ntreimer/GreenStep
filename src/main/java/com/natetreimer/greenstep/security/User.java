@@ -1,7 +1,7 @@
 package com.natetreimer.greenstep.security;
 
-import com.natetreimer.greenstep.models.Checklist;
-import com.natetreimer.greenstep.models.Footprint;
+import com.natetreimer.greenstep.checklist.Checklist;
+import com.natetreimer.greenstep.footprint.Footprint;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -117,6 +117,22 @@ public class User {
                 ", password='" + "*********" + '\'' +
                 ", roles=" + roles +
                 '}';
+    }
+
+    public Set<Footprint> getFootprints() {
+        return footprints;
+    }
+
+    public void setFootprints(Set<Footprint> footprints) {
+        this.footprints = footprints;
+    }
+
+    public Set<Checklist> getCheckedItems() {
+        return checkedItems;
+    }
+
+    public void setCheckedItems(Set<Checklist> checkedItems) {
+        this.checkedItems = checkedItems;
     }
 }
 

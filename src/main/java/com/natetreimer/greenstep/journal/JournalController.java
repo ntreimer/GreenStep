@@ -1,4 +1,4 @@
-package com.natetreimer.greenstep.controllers;
+package com.natetreimer.greenstep.journal;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

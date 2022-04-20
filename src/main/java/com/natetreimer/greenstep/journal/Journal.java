@@ -1,4 +1,4 @@
-package com.natetreimer.greenstep.models;
+package com.natetreimer.greenstep.journal;
 
 import javax.persistence.*;
 import java.sql.Date;

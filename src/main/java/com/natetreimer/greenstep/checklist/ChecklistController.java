@@ -1,17 +1,20 @@
-package com.natetreimer.greenstep.controllers;
+package com.natetreimer.greenstep.checklist;
 
 
+import com.natetreimer.greenstep.checklist.Checklist;
 import com.natetreimer.greenstep.security.User;
 import com.natetreimer.greenstep.security.UserRepository;
-import com.natetreimer.greenstep.services.ChecklistService;
+import com.natetreimer.greenstep.checklist.ChecklistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import javax.naming.Binding;
+
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -20,15 +23,23 @@ public class ChecklistController {
     @Autowired
     private ChecklistService checklistService;
 
+    @Autowired
     private UserRepository userRepository;
-    private ChecklistController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @GetMapping("/checklist")
     public String viewChecklist(Principal principal, Model model) {
         User user = userRepository.findByEmail(principal.getName());
-        model.addAttribute("listChecklists", checklistService.getChecklistByUser(user));
+
+
+        List<Checklist> allChecklists = checklistService.getAllChecklists();
+        List<ExtendedChecklist> extendedChecklists = new ArrayList<>();
+        List<Checklist> myChecklists = checklistService.getChecklistByUser(user);
+        allChecklists.forEach((checklist -> extendedChecklists.add(new ExtendedChecklist(false, checklist))));
+        myChecklists.forEach(checklist -> {
+            int index = extendedChecklists.indexOf(checklist);
+            extendedChecklists.get(index).setCompleted(true);
+        });
+        model.addAttribute("extendedChecklist", extendedChecklists);
         return "checklist";
     }
 
@@ -40,14 +51,14 @@ public class ChecklistController {
         return "new_checklist";
     }
 
-//    @PostMapping("/saveChecklist")
-//    public String saveChecklist(@ModelAttribute("checklist") @Valid Checklist checklist, BindingResult bindingResult) {
-//        if(bindingResult.hasErrors()) {
-//            return "new_checklist";
-//        }
-//        checklistService.saveChecklist(checklist);
-//        return "redirect:/checklist";
-//    }
+    @PostMapping("/saveChecklist")
+    public String saveChecklist(@ModelAttribute("checklist") @Valid Checklist checklist, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return "new_checklist";
+        }
+        checklistService.saveChecklist(checklist);
+        return "redirect:/checklist";
+    }
 
 //    @GetMapping("/showFormForUpdate/{id}")
 //    public String showFormForUpdate(@PathVariable(value = "id") Long id, Model model) {

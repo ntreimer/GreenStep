@@ -1,7 +1,8 @@
-package com.natetreimer.greenstep.services;
+package com.natetreimer.greenstep.checklist;
 
-import com.natetreimer.greenstep.models.Checklist;
-import com.natetreimer.greenstep.repositories.ChecklistRepository;
+import com.natetreimer.greenstep.checklist.Checklist;
+import com.natetreimer.greenstep.checklist.ChecklistRepository;
+import com.natetreimer.greenstep.checklist.ChecklistService;
 import com.natetreimer.greenstep.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

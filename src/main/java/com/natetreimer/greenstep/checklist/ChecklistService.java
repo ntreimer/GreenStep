@@ -1,8 +1,7 @@
-package com.natetreimer.greenstep.services;
+package com.natetreimer.greenstep.checklist;
 
-import com.natetreimer.greenstep.models.Checklist;
+import com.natetreimer.greenstep.checklist.Checklist;
 import com.natetreimer.greenstep.security.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.natetreimer.greenstep.repositories;
+package com.natetreimer.greenstep.checklist;
 
-import com.natetreimer.greenstep.models.Checklist;
+import com.natetreimer.greenstep.checklist.Checklist;
 import com.natetreimer.greenstep.security.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

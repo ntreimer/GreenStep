@@ -1,6 +1,6 @@
-package com.natetreimer.greenstep.repositories;
+package com.natetreimer.greenstep.footprint;
 
-import com.natetreimer.greenstep.models.Footprint;
+import com.natetreimer.greenstep.footprint.Footprint;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

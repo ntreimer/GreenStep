@@ -1,7 +1,6 @@
-package com.natetreimer.greenstep.services;
+package com.natetreimer.greenstep.journal;
 
-import com.natetreimer.greenstep.models.Journal;
-import org.springframework.stereotype.Service;
+import com.natetreimer.greenstep.journal.Journal;
 
 import java.util.List;
 
