@@ -2,6 +2,7 @@ package com.natetreimer.greenstep.services;
 
 import com.natetreimer.greenstep.models.Checklist;
 import com.natetreimer.greenstep.repositories.ChecklistRepository;
+import com.natetreimer.greenstep.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,12 @@ public class ChecklistServiceImpl implements ChecklistService {
     public List<Checklist> getAllChecklists() {
         return checklistRepository.findAll();
     }
+
+    @Override
+    public List<Checklist> getChecklistByUser(User user) {
+        return checklistRepository.findChecklistByCheckedUsers(user);
+    }
+
 
     @Override
     public void saveChecklist(Checklist checklist) {

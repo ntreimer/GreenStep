@@ -1,6 +1,9 @@
 package com.natetreimer.greenstep.models;
 
+import com.natetreimer.greenstep.security.User;
+
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -15,12 +18,16 @@ public class Checklist {
     @Column(nullable = false)
     private String description;
 
+    @ManyToMany(mappedBy = "checkedItems")
+    private Set<User> checkedUsers;
+
     public Checklist() {
     }
 
-    public Checklist(Long id, String description) {
+    public Checklist(Long id, String description, Set<User> checkedUsers) {
         this.id = id;
         this.description = description;
+        this.checkedUsers = checkedUsers;
     }
 
     public Long getId() {
@@ -37,5 +44,13 @@ public class Checklist {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<User> getCheckedUsers() {
+        return checkedUsers;
+    }
+
+    public void setCheckedUsers(Set<User> checkedUsers) {
+        this.checkedUsers = checkedUsers;
     }
 }

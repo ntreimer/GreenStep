@@ -13,5 +13,5 @@ public interface FootprintRepository extends JpaRepository<Footprint, Long> {
     Footprint findFootprintById(Long id);
 
     @Query("SELECT f FROM Footprint f WHERE user_id=:userIdParam")
-    public abstract List<Footprint> getFootprintsByUserId(@Param("userIdParam") Long id);
+    List<Footprint> getFootprintsByUserId(@Param("userIdParam") Long id);
 }
