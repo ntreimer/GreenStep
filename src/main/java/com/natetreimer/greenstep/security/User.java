@@ -2,6 +2,7 @@ package com.natetreimer.greenstep.security;
 
 import com.natetreimer.greenstep.checklist.Checklist;
 import com.natetreimer.greenstep.footprint.Footprint;
+import com.natetreimer.greenstep.journal.Journal;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -36,6 +37,9 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private Set<Footprint> footprints;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Journal> journals;
 
     @ManyToMany
     @JoinTable(name="user_checklist", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name="checklist_id"))

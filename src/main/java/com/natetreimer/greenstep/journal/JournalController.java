@@ -13,30 +13,32 @@ import javax.validation.Valid;
 @Controller
 public class JournalController {
 
-//    @Autowired
-//    private JournalService journalService;
+    @Autowired
+    private JournalService journalService;
 
     @GetMapping("/journal")
     public String viewJournals(Model model) {
-//        model.addAttribute("listJournals", journalService.getAllJournals());
+        Journal journal = new Journal();
+        model.addAttribute("journal", journal);
+        model.addAttribute("listJournals", journalService.getAllJournals());
         return "journal";
     }
 
-    @GetMapping("/new_journal")
-    public String createNewJournal(Model model) {
-//        Journal journal = new Journal();
-//        model.addAttribute("journal", journal);
-        return "new_journal";
-    }
-
-//    @PostMapping("/saveJournal")
-//    public String saveJournal(@ModelAttribute("journal") @Valid Journal journal, BindingResult bindingResult) {
-//        if(bindingResult.hasErrors()) {
-//            return "new_journal";
-//        }
-//        journalService.saveJournal(journal);
-//        return "redirect:/journal";
+//    @GetMapping("/new_journal")
+//    public String createNewJournal(Model model) {
+////        Journal journal = new Journal();
+////        model.addAttribute("journal", journal);
+//        return "new_journal";
 //    }
+
+    @PostMapping("/saveJournal")
+    public String saveJournal(@ModelAttribute("journal") @Valid Journal journal, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return "new_journal";
+        }
+        journalService.saveJournal(journal);
+        return "redirect:/journal";
+    }
 //
 //    @GetMapping("/showFormForUpdate/{id}")
 //    public String showFormForUpdate(@PathVariable(value = "id") Long id, Model model) {

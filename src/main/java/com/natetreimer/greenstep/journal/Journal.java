@@ -1,5 +1,7 @@
 package com.natetreimer.greenstep.journal;
 
+import com.natetreimer.greenstep.security.User;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -13,6 +15,10 @@ public class Journal {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
+
     @Basic
     @Column(nullable = false)
     private Date date;
@@ -22,6 +28,13 @@ public class Journal {
     private String content;
 
     public Journal() {
+    }
+
+    public Journal(Long id, User user, Date date, String content) {
+        this.id = id;
+        this.user = user;
+        this.date = date;
+        this.content = content;
     }
 
     public Journal(Long id, Date date, String content) {
@@ -36,6 +49,14 @@ public class Journal {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Date getDate() {
