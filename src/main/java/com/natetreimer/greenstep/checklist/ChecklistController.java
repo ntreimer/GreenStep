@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,16 +29,21 @@ public class ChecklistController {
     public String viewChecklist(Principal principal, Model model) {
         User user = userRepository.findByEmail(principal.getName());
 
-
         List<Checklist> allChecklists = checklistService.getAllChecklists();
-        List<ExtendedChecklist> extendedChecklists = new ArrayList<>();
+        ArrayList<ExtendedChecklist> extendedChecklists = new ArrayList<>();
+
         List<Checklist> myChecklists = checklistService.getChecklistByUser(user);
         allChecklists.forEach((checklist -> extendedChecklists.add(new ExtendedChecklist(false, checklist))));
-        myChecklists.forEach(checklist -> {
-            int index = extendedChecklists.indexOf(checklist);
-            extendedChecklists.get(index).setCompleted(true);
+        myChecklists.forEach(thisChecklist -> {
+            extendedChecklists.forEach(extendedChecklist -> {
+                if (extendedChecklist.getChecklist() == thisChecklist) {
+                    extendedChecklist.setCompleted(true);
+                }
+            });
         });
-        model.addAttribute("extendedChecklist", extendedChecklists);
+        extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
+        model.addAttribute("extendedChecklists", extendedChecklists);
+        System.out.println("here are the extendedcheckists: " + extendedChecklists);
         return "checklist";
     }
 
@@ -52,11 +56,13 @@ public class ChecklistController {
     }
 
     @PostMapping("/saveChecklist")
-    public String saveChecklist(@ModelAttribute("checklist") @Valid Checklist checklist, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
-            return "new_checklist";
-        }
-        checklistService.saveChecklist(checklist);
+    public String saveChecklist(@ModelAttribute("extendedChecklists") ArrayList<ExtendedChecklist> extendedChecklists, BindingResult bindingResult) {
+        System.out.println("inside savechecklist!!!!!!!!!!");
+        System.out.println(extendedChecklists);
+//        System.out.println(extendedChecklists.size());
+//        extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
+//        checklistService.saveChecklist(checklist);
+        System.out.println("at the end!!!!!");
         return "redirect:/checklist";
     }
 
