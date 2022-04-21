@@ -17,6 +17,10 @@ GreenStep is a web-based application for users who wish to calculate their carbo
 
 ## Daily Progress
 
+April 19th (79% done)
+* joined Journal and User and can now view Journal entries on page
+* attempted to add saveChecklist functionality
+
 April 19th (75% done)
 * sorted packages by model
 * added ExtendedChecklist class for front end
