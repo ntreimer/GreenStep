@@ -13,6 +13,7 @@ GreenStep is a web-based application for users who wish to calculate their carbo
 - [Lessons learned from this project](#Lessons-learned)
 - [Wireframe](linktodiagram)
 - [Schema diagram](linktoschema)
+- [Case Study Rubric](https://docs.google.com/document/d/107MWFd85FxB6hQ3aMlY6wISP72BYc5fs_V6jnWmlSC8/edit?usp=sharing)
 - [Jira](https://www.google.com/) - Please contact [Nate Treimer](mailto:natetreimer@gmail.com) for accessing this Jira account
 
 ## Daily Progress
