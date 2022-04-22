@@ -3,6 +3,7 @@ package com.natetreimer.greenstep.checklist;
 import com.natetreimer.greenstep.security.User;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -28,6 +29,19 @@ public class Checklist {
         this.id = id;
         this.description = description;
         this.checkedUsers = checkedUsers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Checklist checklist = (Checklist) o;
+        return Objects.equals(id, checklist.id) && Objects.equals(description, checklist.description) && Objects.equals(checkedUsers, checklist.checkedUsers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, description, checkedUsers);
     }
 
     public Long getId() {

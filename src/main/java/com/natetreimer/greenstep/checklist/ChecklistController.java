@@ -1,20 +1,15 @@
 package com.natetreimer.greenstep.checklist;
 
-
-import com.natetreimer.greenstep.checklist.Checklist;
 import com.natetreimer.greenstep.security.User;
 import com.natetreimer.greenstep.security.UserRepository;
-import com.natetreimer.greenstep.checklist.ChecklistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
-
 
 @Controller
 public class ChecklistController {
@@ -44,6 +39,14 @@ public class ChecklistController {
         extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
         model.addAttribute("extendedChecklists", extendedChecklists);
         System.out.println("here are the extendedcheckists: " + extendedChecklists);
+
+//        model.addAttribute("single", extendedChecklists.get(0));
+
+        ExtendedChecklistDto dto = new ExtendedChecklistDto();
+        dto.setExtendedChecklists(extendedChecklists);
+
+        model.addAttribute("dto", dto);
+
         return "checklist";
     }
 
@@ -55,10 +58,22 @@ public class ChecklistController {
         return "new_checklist";
     }
 
+        //    @PostMapping("/saveChecklist")
+//    public String saveChecklist(@ModelAttribute("extendedChecklists") ArrayList<ExtendedChecklist> extendedChecklists, BindingResult bindingResult) {
+//        System.out.println("inside savechecklist!!!!!!!!!!");
+//        System.out.println(extendedChecklists);
+////        System.out.println(extendedChecklists.size());
+////        extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
+////        checklistService.saveChecklist(checklist);
+//        System.out.println("at the end!!!!!");
+//        return "redirect:/checklist";
+//    }
+
+
     @PostMapping("/saveChecklist")
-    public String saveChecklist(@ModelAttribute("extendedChecklists") ArrayList<ExtendedChecklist> extendedChecklists, BindingResult bindingResult) {
+    public String saveChecklist(@ModelAttribute("extendedChecklists") ExtendedChecklistDto dto, BindingResult bindingResult) {
         System.out.println("inside savechecklist!!!!!!!!!!");
-        System.out.println(extendedChecklists);
+        System.out.println(dto.getExtendedChecklists());
 //        System.out.println(extendedChecklists.size());
 //        extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
 //        checklistService.saveChecklist(checklist);
