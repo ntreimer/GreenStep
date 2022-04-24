@@ -40,6 +40,10 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
+    public User saveExistingUser(User user){
+        return userRepository.save(user);
+    }
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);

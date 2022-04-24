@@ -9,7 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class ChecklistController {
@@ -71,9 +73,18 @@ public class ChecklistController {
 
 
     @PostMapping("/saveChecklist")
-    public String saveChecklist(@ModelAttribute("extendedChecklists") ExtendedChecklistDto dto, BindingResult bindingResult) {
-        System.out.println("inside savechecklist!!!!!!!!!!");
+    public String saveChecklist(@ModelAttribute("extendedChecklists") ExtendedChecklistDto dto, Principal principal, BindingResult bindingResult) {
         System.out.println(dto.getExtendedChecklists());
+        List<ExtendedChecklist> extendedChecklists = dto.getExtendedChecklists();
+        Set<Checklist> checklistsToSave = new HashSet<>();
+        extendedChecklists.forEach(extendedChecklist -> {
+            if (extendedChecklist.isCompleted()) {
+                checklistsToSave.add(extendedChecklist.getChecklist());
+            }
+        });
+        User user = userRepository.findByEmail(principal.getName());
+        user.setCheckedItems(checklistsToSave);
+        userRepository.save(user);
 //        System.out.println(extendedChecklists.size());
 //        extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
 //        checklistService.saveChecklist(checklist);
