@@ -1,129 +1,149 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>Footprint</title>
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
     />
-    <link rel="stylesheet" th:href="@{/styles/index.css}" />
+    <link rel="stylesheet" th:href="@{/styles/index.css}"/>
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
     ></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light" id="my-navbar">
-      <a class="navbar-brand" href="redirect:/"
-        ><img
-          th:src="@{/GreenStep-logos/GreenStep-logos_black.png}"
-          alt=""
-          srcset=""
-          width="50 px"
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" id="my-navbar">
+    <a class="navbar-brand" href="redirect:/"
+    ><img
+            th:src="@{/GreenStep-logos/GreenStep-logos_black.png}"
+            alt=""
+            srcset=""
+            width="50 px"
+    /></a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
         <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/footprint}">Calculate Footprint</a>
-          </li>
-          <!--          <li class="nav-item dropdown">-->
-          <!--            <a-->
-          <!--              class="nav-link dropdown-toggle"-->
-          <!--              href="#"-->
-          <!--              id="navbarDropdown"-->
-          <!--              role="button"-->
-          <!--              data-toggle="dropdown"-->
-          <!--              aria-haspopup="true"-->
-          <!--              aria-expanded="false"-->
-          <!--            >-->
-          <!--              Calculate Footprint-->
-          <!--            </a>-->
-          <!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-          <!--              <a class="dropdown-item" th:href="@{/footprint}" >House</a>-->
-          <!--              <a class="dropdown-item" href="#">Car</a>-->
-          <!--              <a class="dropdown-item" href="#">Flights</a>-->
-          <!--              <div class="dropdown-divider"></div>-->
-          <!--              <a class="dropdown-item" href="#">Totals</a>-->
-          <!--            </div>-->
-          <!--          </li>-->
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/checklist}">Checklist</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/journal}">Journal</a>
-          </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/footprint}">Calculate Footprint</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/checklist}">Checklist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/journal}">Journal</a>
+            </li>
         </ul>
         <div class="form-inline nav-item">
-          <a th:href="@{/logout}" class="nav-link" id="logout-button">
-            Log out
-          </a>
+            <a th:href="@{/logout}" class="nav-link" id="logout-button">
+                Log out
+            </a>
         </div>
-      </div>
-    </nav>
-    <br />
-    <table border="1" class="table table-striped table-responsive-md">
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Year</th>
-          <th>Weight</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="footprint : ${listFootprints}">
-          <!--          <td th:text="${footprint.user_id}"></td>-->
-          <td th:text="${footprint.user.id}"></td>
-          <td th:text="${footprint.year}"></td>
-          <td>
-            <p th:text="${footprint.weight}"></p>
-            <p>metric tons of CO<sub>2</sub>e</p>
-          </td>
-          <td>
-            <a
-              th:href="@{/updateFootprint/{id}(id=${footprint.id})}"
-              class="btn btn-primary"
-              >Update</a
-            >
-            <a
-              th:href="@{/deleteFootprint/{id}(id=${footprint.id})}"
-              class="btn btn-danger"
-              >Delete</a
-            >
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <a th:href="@{/new_footprint}" class="btn btn-primary">New Footprint</a>
-  </body>
+    </div>
+</nav>
+<br/>
+<h1>My Carbon Footprint Records</h1>
+<br>
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+        <table border="1" class="table table-light table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th>Year</th>
+                <th>Weight</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="footprint : ${listFootprints}">
+                <td th:text="${footprint.year}"></td>
+                <td>
+                    <p th:text="${footprint.weight}"></p>
+                    <p>metric tons of CO<sub>2</sub>e</p>
+                </td>
+                <td>
+                    <a
+                            th:href="@{/updateFootprint/{id}(id=${footprint.id})}"
+                            class="btn btn-primary"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd"
+                                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                        </svg>
+                        Edit</a
+                    >
+                    <a
+                            th:href="@{/deleteFootprint/{id}(id=${footprint.id})}"
+                            class="btn btn-danger"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-trash"
+                             viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd"
+                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                        Remove</a
+                    >
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+</div>
+
+<br/>
+<div class="row">
+  <div class="col-md-3">
+
+  </div>
+  <div class="col-md-6">
+    <a th:href="@{/new_footprint}" class="btn btn-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle"
+           viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      </svg>
+      New Footprint</a>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
+
+</body>
 </html>

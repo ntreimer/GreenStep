@@ -40,9 +40,6 @@ public class ChecklistController {
         });
         extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
         model.addAttribute("extendedChecklists", extendedChecklists);
-        System.out.println("here are the extendedcheckists: " + extendedChecklists);
-
-//        model.addAttribute("single", extendedChecklists.get(0));
 
         ExtendedChecklistDto dto = new ExtendedChecklistDto();
         dto.setExtendedChecklists(extendedChecklists);
@@ -74,21 +71,20 @@ public class ChecklistController {
 
     @PostMapping("/saveChecklist")
     public String saveChecklist(@ModelAttribute("extendedChecklists") ExtendedChecklistDto dto, Principal principal, BindingResult bindingResult) {
-        System.out.println(dto.getExtendedChecklists());
+
         List<ExtendedChecklist> extendedChecklists = dto.getExtendedChecklists();
         Set<Checklist> checklistsToSave = new HashSet<>();
+
         extendedChecklists.forEach(extendedChecklist -> {
             if (extendedChecklist.isCompleted()) {
                 checklistsToSave.add(extendedChecklist.getChecklist());
             }
         });
+
         User user = userRepository.findByEmail(principal.getName());
         user.setCheckedItems(checklistsToSave);
         userRepository.save(user);
-//        System.out.println(extendedChecklists.size());
-//        extendedChecklists.forEach(extendedChecklist -> System.out.println(extendedChecklist.isCompleted()));
-//        checklistService.saveChecklist(checklist);
-        System.out.println("at the end!!!!!");
+
         return "redirect:/checklist";
     }
 

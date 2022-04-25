@@ -91,7 +91,17 @@
 </nav>
 <br />
 <h1>My Checklist</h1>
-​
+<div class="row">
+  <div class="col-md-3">
+    One of three columns
+  </div>
+  <div class="col-md-6">
+    One of three columns
+  </div>
+  <div class="col-md-3">
+    One of three columns
+  </div>
+</div>
 <form
         action="#"
         th:action="@{/saveChecklist}"
@@ -108,25 +118,19 @@
     <tbody>
     <tr th:each="extendedChecklist, extendedChecklistStat : *{extendedChecklists}">
       <td>
-        <!--        name="completed"-->
-        <!--        th:checked="${single.completed}"-->
         <input
                 type="checkbox"
                 th:field="*{extendedChecklists[__${extendedChecklistStat.index}__].completed}"
                 th:value="${extendedChecklist.completed}"
         />
-        <!--              <input type="text" th:name="completed" th:field="${extendedChecklist.completed}">-->
       </td>
       <input type="hidden" th:field="*{extendedChecklists[__${extendedChecklistStat.index}__].checklist}">
-      <!--            <input type="hidden" th:field="${extendedChecklist.checklist.id}">-->
       <td th:text="*{extendedChecklists[__${extendedChecklistStat.index}__].checklist.description}"
           th:field="${extendedChecklist.checklist.description}"
       ></td>
     </tr>
     </tbody>
   </table>
-  <!--  <input type="checkbox" name="something" th:field="${single.completed}" th:value="${single.completed}">-->
-  <!--  <input th:text="${single.checklist.description}" th:field="${single.checklist.description}">-->
   <button type="submit" class="btn btn-info col-2">Save Checklist</button>
 </form>
 <script th:src="@{/js/checklist.js}"></script>
