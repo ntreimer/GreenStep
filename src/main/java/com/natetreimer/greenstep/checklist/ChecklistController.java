@@ -23,7 +23,7 @@ public class ChecklistController {
     private UserRepository userRepository;
 
     @GetMapping("/checklist")
-    public String viewChecklist(Principal principal, Model model) {
+    public String viewChecklist(Principal principal, Model model) throws ChecklistNotFoundException {
         User user = userRepository.findByEmail(principal.getName());
 
         List<Checklist> allChecklists = checklistService.getAllChecklists();

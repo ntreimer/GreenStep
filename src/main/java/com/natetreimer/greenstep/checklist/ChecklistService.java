@@ -10,7 +10,7 @@ public interface ChecklistService {
 
     List<Checklist> getAllChecklists();
 
-    List<Checklist> getChecklistByUser(User user);
+    List<Checklist> getChecklistByUser (User user) throws ChecklistNotFoundException;
 
     void saveChecklist(Checklist footprint);
 

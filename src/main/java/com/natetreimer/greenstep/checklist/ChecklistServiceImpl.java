@@ -7,6 +7,7 @@ import com.natetreimer.greenstep.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,8 +23,14 @@ public class ChecklistServiceImpl implements ChecklistService {
     }
 
     @Override
-    public List<Checklist> getChecklistByUser(User user) {
-        return checklistRepository.findChecklistByCheckedUsers(user);
+    public List<Checklist> getChecklistByUser(User user) throws ChecklistNotFoundException {
+        try {
+            return checklistRepository.findChecklistByCheckedUsers(user);
+        } catch (EntityNotFoundException e) {
+            throw new ChecklistNotFoundException();
+        }
+
+
     }
 
 

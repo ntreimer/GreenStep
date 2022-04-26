@@ -4,19 +4,23 @@ GreenStep is a web-based application for users who wish to calculate their carbo
 
 ## Contents
 
-- [Daily Progress](#Daily-Progess)
-- [User Stories](#User-Stories)
-    - [User](#User)
-    - [Admin](#Admin)
-- [Technical Architecture](GreenStep_Technical_Architecture.jpg)
+- [Daily Progress](#Daily-progress)
+- [User Stories](#User-stories)
+- [Technical Architecture](technology_architecture_diagram.png)
 - [Technical challenges](#Technical-challenges)
 - [Lessons learned from this project](#Lessons-learned)
-- [Wireframe](linktodiagram)
-- [Schema diagram](linktoschema)
+- [Wireframes](Capstone.fig)
+- [Schema diagram](entity_relationship_diagram.png)
 - [Case Study Rubric](https://docs.google.com/document/d/107MWFd85FxB6hQ3aMlY6wISP72BYc5fs_V6jnWmlSC8/edit?usp=sharing) Please contact [Nate Treimer](mailto:natetreimer@gmail.com) for accessing this rubric 
-- [Jira](https://www.google.com/) - Please contact [Nate Treimer](mailto:natetreimer@gmail.com) for accessing this Jira account
+
+[//]: # (- [Jira]&#40;https://www.google.com/&#41; - Please contact [Nate Treimer]&#40;mailto:natetreimer@gmail.com&#41; for accessing this Jira account)
 
 ## Daily Progress
+
+April 25th (92% done)
+* bootstrap styling
+* exception handling
+* save journal implementation
 
 April 20th (83% done)
 * used DTO to transfer checklist info
@@ -69,12 +73,18 @@ April 11th (35% done)
 * As a user, I would like to visit a page with recommended products, so I can find products that will help reduce my footprint.
 * As a user, I would like to browse a menu at the top of the screen, so I can easily access any of the pages.
 
-## Technical Challenges / Lessons Learned
+## Technical Challenges
 
 * Capturing data specific to a user / Have to use Principal to obtain a user's ID for a query
 * How to create a dropdown with values populated by Thymeleaf
 * How to capture checklist items and have them unique to each user
 * Implementing update with footprints
+
+## Lessons Learned
+
+* When a feature is proving really difficult to implement, try to figure out a way to get a similar result or move on to a different feature.
+* Things may not go as planned, so be ready to adapt your plans to fit changing requirements. 
+* Working in groups can be incredibly useful, even when not directly asking for help. 
 
 ## Future Steps
 
