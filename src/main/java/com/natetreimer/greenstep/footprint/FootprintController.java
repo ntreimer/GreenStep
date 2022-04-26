@@ -4,6 +4,8 @@ import com.natetreimer.greenstep.footprint.Footprint;
 import com.natetreimer.greenstep.security.User;
 import com.natetreimer.greenstep.security.UserRepository;
 import com.natetreimer.greenstep.footprint.FootprintService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,11 +25,13 @@ public class FootprintController {
     @Autowired
     private UserRepository userRepository;
 
+    private static final Logger log = LoggerFactory.getLogger(FootprintController.class);
+
     @GetMapping("/footprint")
     public String viewFootprints(Principal principal, Model model) {
         User user = userRepository.findByEmail(principal.getName());
         model.addAttribute("listFootprints", footprintService.getFootprintsByUserId(user.getId()));
-
+        log.info("getting all footprints");
         return "footprint";
     }
 

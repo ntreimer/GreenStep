@@ -3,6 +3,8 @@ package com.natetreimer.greenstep.footprint;
 import com.natetreimer.greenstep.footprint.Footprint;
 import com.natetreimer.greenstep.footprint.FootprintRepository;
 import com.natetreimer.greenstep.footprint.FootprintService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,8 @@ import java.util.Optional;
 
 @Service
 public class FootprintServiceImpl implements FootprintService {
+
+    private static final Logger log = LoggerFactory.getLogger(FootprintServiceImpl.class);
 
     @Autowired
     private FootprintRepository footprintRepository;
@@ -34,6 +38,7 @@ public class FootprintServiceImpl implements FootprintService {
         } else {
             throw new RuntimeException("Footprint not found for id :: " + id);
         }
+        log.info("getFootprintById successful");
         return footprint;
     }
 
