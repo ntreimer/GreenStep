@@ -11,7 +11,7 @@ public interface JournalService {
 
     void saveJournal(Journal footprint);
 
-    Journal getJournalById(Long id);
+    Journal getJournalById(Long id) throws JournalNotFoundException;
 
     void deleteJournalById(Long id);
 

@@ -10,17 +10,17 @@
 //    currentYear -= 1;
 //}
 
-function calculateFootprint(e) {
-    e.preventDefault();
+function calculateFootprint(event) {
+    event.preventDefault();
     let year = Number(document.getElementById("year").value);
-    let electricity = Number(document.getElementById("electricity").value);
-    let naturalGas = Number(document.getElementById("natural-gas").value);
-    let heatingOil = Number(document.getElementById("heating-oil").value);
-    let coal = Number(document.getElementById("coal").value);
-    let propane = Number(document.getElementById("propane").value);
+    let electricity = 0.000368 * Number(document.getElementById("electricity").value);
+    let naturalGas = 0.000183 * Number(document.getElementById("natural-gas").value);
+    let heatingOil = 0.00962 * Number(document.getElementById("heating-oil").value);
+    let coal = 0.0288 * Number(document.getElementById("coal").value);
+    let propane = 0.00584 * Number(document.getElementById("propane").value);
     let total = document.getElementById("footprint-total");
-    let totalYear = document.getElementById("total-year");
+//    let totalYear = document.getElementById("total-year");
 
-    totalYear.value = year;
-    total.value = electricity + naturalGas + heatingOil + coal + propane;
+//    totalYear.value = year;
+    total.value = Math.round(electricity + naturalGas + heatingOil + coal + propane);
 }

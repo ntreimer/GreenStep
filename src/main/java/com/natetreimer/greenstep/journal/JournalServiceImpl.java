@@ -26,13 +26,13 @@ public class JournalServiceImpl implements JournalService {
     }
 
     @Override
-    public Journal getJournalById(Long id) {
+    public Journal getJournalById(Long id) throws JournalNotFoundException {
         Optional<Journal> optional = journalRepository.findById(id);
-        Journal journal = null;
+        Journal journal;
         if (optional.isPresent()) {
             journal = optional.get();
         } else {
-            throw new RuntimeException("Journal not found for id :: " + id);
+            throw new JournalNotFoundException();
         }
         return journal;
     }

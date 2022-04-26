@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="ISO-8859-1" />
+<head>
+    <meta charset="ISO-8859-1"/>
     <title>Calculate Footprint</title>
     <link
             rel="stylesheet"
@@ -9,7 +9,7 @@
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous"
     />
-    <link rel="stylesheet" th:href="@{/styles/index.css}" />
+    <link rel="stylesheet" th:href="@{/styles/index.css}"/>
     <script
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -25,9 +25,9 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"
     ></script>
-  </head>
-  <body>
-  <nav class="navbar navbar-expand-lg navbar-light" id="my-navbar">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" id="my-navbar">
     <a class="navbar-brand" href="redirect:/"
     ><img
             th:src="@{/GreenStep-logos/GreenStep-logos_black.png}"
@@ -44,122 +44,95 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/footprint}">Calculate Footprint</a>
-        </li>
-        <!--          <li class="nav-item dropdown">-->
-        <!--            <a-->
-        <!--              class="nav-link dropdown-toggle"-->
-        <!--              href="#"-->
-        <!--              id="navbarDropdown"-->
-        <!--              role="button"-->
-        <!--              data-toggle="dropdown"-->
-        <!--              aria-haspopup="true"-->
-        <!--              aria-expanded="false"-->
-        <!--            >-->
-        <!--              Calculate Footprint-->
-        <!--            </a>-->
-        <!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-        <!--              <a class="dropdown-item" th:href="@{/footprint}" >House</a>-->
-        <!--              <a class="dropdown-item" href="#">Car</a>-->
-        <!--              <a class="dropdown-item" href="#">Flights</a>-->
-        <!--              <div class="dropdown-divider"></div>-->
-        <!--              <a class="dropdown-item" href="#">Totals</a>-->
-        <!--            </div>-->
-        <!--          </li>-->
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/checklist}">Checklist</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/journal}">Journal</a>
-        </li>
-      </ul>
-      <div class="form-inline nav-item">
-        <a th:href="@{/logout}" class="nav-link" id="logout-button">
-          Log out
-        </a>
-      </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/footprint}">Calculate Footprint</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/checklist}">Checklist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/journal}">Journal</a>
+            </li>
+        </ul>
+        <div class="form-inline nav-item">
+            <a th:href="@{/logout}" class="nav-link" id="logout-button">
+                Log out
+            </a>
+        </div>
     </div>
-  </nav>
-  <br />
-    <div class="container">
-      <hr />
-      <h2>Calculate Footprint</h2>
-      <form
-        action="#"
-        th:action="@{/saveFootprint}"
-        th:object="${footprint}"
-        method="POST"
-      >
+</nav>
+<br/>
+<div class="container">
+    <h2>Calculate Footprint</h2>
+    <br>
+    <form
+            action="#"
+            th:action="@{/saveFootprint}"
+            th:object="${footprint}"
+            method="POST"
+    >
+        <label for="year">Year</label>
         <select id="year" name="year">
-          <option
-            th:each="i : ${#numbers.sequence(2000, 2022)}"
-            th:value="${i}"
-            th:text="${i}"
-            th:selected="${i==2022}"
-          ></option>
+            <option
+                    th:each="i : ${#numbers.sequence(2000, 2022)}"
+                    th:value="${i}"
+                    th:text="${i}"
+                    th:selected="${i==2022}"
+            ></option>
         </select>
+        <br>
+        <br>
         <table>
-          <tr>
-            <td>Electricity</td>
-            <td><input type="number" name="electricity" id="electricity" /></td>
-            <td>0.368 kgC02e/kWh</td>
-          </tr>
-          <tr>
-            <td>Natural Gas</td>
-            <td><input type="number" name="natural-gas" id="natural-gas" /></td>
-            <td>kWh</td>
-          </tr>
-          <tr>
-            <td>Heating Oil</td>
-            <td><input type="number" name="heating-oil" id="heating-oil" /></td>
-            <td>US gallons</td>
-          </tr>
-          <tr>
-            <td>Coal</td>
-            <td><input type="number" name="coal" id="coal" /></td>
-            <td>metric tons</td>
-          </tr>
-          <tr>
-            <td>Propane</td>
-            <td><input type="number" name="propane" id="propane" /></td>
-            <td>US gallons</td>
-          </tr>
+            <tr>
+                <td>Electricity</td>
+                <td><input type="number" name="electricity" id="electricity"/></td>
+                <td>kWh</td>
+            </tr>
+            <tr>
+                <td>Natural Gas</td>
+                <td><input type="number" name="natural-gas" id="natural-gas"/></td>
+                <td>kWh</td>
+            </tr>
+            <tr>
+                <td>Heating Oil</td>
+                <td><input type="number" name="heating-oil" id="heating-oil"/></td>
+                <td>US gallons</td>
+            </tr>
+            <tr>
+                <td>Coal</td>
+                <td><input type="number" name="coal" id="coal"/></td>
+                <td>10kg bags</td>
+            </tr>
+            <tr>
+                <td>Propane</td>
+                <td><input type="number" name="propane" id="propane"/></td>
+                <td>US gallons</td>
+            </tr>
         </table>
-        <button onclick="calculateFootprint(event);">
-          Calculate Footprint
+        <br>
+        <button onclick="calculateFootprint(event);" class="btn btn-primary">
+            Calculate Footprint
         </button>
-      </form>
-      <hr />
-      <a th:href="@{/}"> Back to Footprints </a>
-    </div>
-    <div id="totalDiv">
-      <h2>Footprint total:</h2>
-      <form
-        action="#"
-        th:action="@{/saveFootprint}"
-        th:object="${footprint}"
-        method="POST"
-      >
-        <input type="hidden" id="total-year" th:field="*{year}" />
+        <hr>
+        <h2>Footprint total:</h2>
         <input
-          type="number"
-          name="footprint-total"
-          id="footprint-total"
-          th:field="*{weight}"
+                type="number"
+                name="footprint-total"
+                id="footprint-total"
+                th:field="*{weight}"
         />
-        <button type="submit" class="btn btn-info col-2">Save Footprint</button>
-      </form>
-    </div>
-    <script th:src="@{/js/new_footprint.js}"></script>
-  </body>
+        <button type="submit" class="btn btn-primary">Save Footprint</button>
+    </form>
+</div>
+<script th:src="@{/js/new_footprint.js}"></script>
+</body>
 </html>
 

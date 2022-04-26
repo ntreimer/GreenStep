@@ -40,9 +40,7 @@ public class FootprintController {
 
     @PostMapping("/saveFootprint")
     public String saveFootprint(@ModelAttribute("footprint") @Valid Footprint footprint, Principal principal, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
-            return "new_footprint";
-        }
+
         User user = userRepository.findByEmail(principal.getName());
         footprint.setUser(user);
         footprintService.saveFootprint(footprint);
