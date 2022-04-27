@@ -1,29 +1,22 @@
 package com.natetreimer.greenstep.footprint;
 
 
-import com.natetreimer.greenstep.footprint.Footprint;
-import com.natetreimer.greenstep.footprint.FootprintService;
 import com.natetreimer.greenstep.security.Role;
 import com.natetreimer.greenstep.security.User;
 import com.natetreimer.greenstep.security.UserRepository;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Transient;
 import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class FootprintControllerTest {
+class FootprintServiceImplTest {
 
     @Autowired
     private FootprintService footprintService;
@@ -66,10 +59,8 @@ class FootprintControllerTest {
     void getFootprintById() {
         List<Footprint> allFootprints = footprintService.getAllFootprints();
         Footprint footprint1 = allFootprints.get(0);
-        Long foot1id = footprint1.getId();
         if (footprint1 != null) {
             Footprint footprint2 = footprintService.getFootprintById(footprint1.getId());
-            Long foot2id = footprint2.getId();
             Assertions.assertThat(footprint1).isEqualTo(footprint2);
         }
     }

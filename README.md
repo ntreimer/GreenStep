@@ -9,13 +9,19 @@ GreenStep is a web-based application for users who wish to calculate their carbo
 - [Technical Architecture](technology_architecture_diagram.png)
 - [Technical challenges](#Technical-challenges)
 - [Lessons learned from this project](#Lessons-learned)
-- [Wireframes](Capstone.fig)
+- [Wireframes](Treimer_Nate_Wireframe.fig)
 - [Schema diagram](entity_relationship_diagram.png)
 - [Case Study Rubric](https://docs.google.com/document/d/107MWFd85FxB6hQ3aMlY6wISP72BYc5fs_V6jnWmlSC8/edit?usp=sharing) Please contact [Nate Treimer](mailto:natetreimer@gmail.com) for accessing this rubric 
 
 [//]: # (- [Jira]&#40;https://www.google.com/&#41; - Please contact [Nate Treimer]&#40;mailto:natetreimer@gmail.com&#41; for accessing this Jira account)
 
 ## Daily Progress
+
+April 26th (100% done)
+* Added logger to methods
+* Service/Repository layer tests
+* REST controller
+* data.SQL update
 
 April 25th (92% done)
 * bootstrap styling

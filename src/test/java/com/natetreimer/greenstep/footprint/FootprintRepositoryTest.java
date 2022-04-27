@@ -1,23 +1,23 @@
-package com.example.myfirstfullstack.repositories;
+package com.natetreimer.greenstep.footprint;
 
-import com.example.myfirstfullstack.models.Employee;
+
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
 
 @SpringBootTest
-class EmployeeRepositoryTest {
+class FootprintRepositoryTest {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private FootprintRepository footprintRepository;
 
     @Test
-    void findFirstByLastName_should_return_Employee_given_valid_lastname() {
+    void getFootprintsByUserId_should_return_footprints_given_valid_userId() {
 
-        Employee jones = employeeRepository.findFirstByLastName("Jones");
-        Assertions.assertThat(jones.getLastName()).isEqualTo("Jones");
+        List<Footprint> userFootprints = footprintRepository.getFootprintsByUserId(4L);
+        Assertions.assertThat(userFootprints.get(0).getUser().getId()).isEqualTo(4L);
     }
 }

@@ -3,6 +3,7 @@ package com.natetreimer.greenstep.footprint;
 import com.natetreimer.greenstep.security.User;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 
 @Entity
@@ -32,6 +33,19 @@ public class Footprint {
         this.user = user;
         this.year = year;
         this.weight = weight;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Footprint footprint = (Footprint) o;
+        return Objects.equals(id, footprint.id) && Objects.equals(year, footprint.year) && Objects.equals(weight, footprint.weight);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, year, weight);
     }
 
     public Long getId() {

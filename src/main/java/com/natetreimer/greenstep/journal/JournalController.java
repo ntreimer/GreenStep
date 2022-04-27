@@ -23,10 +23,11 @@ public class JournalController {
     private UserRepository userRepository;
 
     @GetMapping("/journal")
-    public String viewJournals(Model model) {
+    public String viewJournals(Model model, Principal principal) {
         Journal journal = new Journal();
+        User user = userRepository.findByEmail(principal.getName());
         model.addAttribute("newJournal", journal);
-        model.addAttribute("listJournals", journalService.getAllJournals());
+        model.addAttribute("listJournals", journalService.getJournalByUser(user));
         return "journal";
     }
 

@@ -1,8 +1,6 @@
 package com.natetreimer.greenstep.journal;
 
-import com.natetreimer.greenstep.journal.Journal;
-import com.natetreimer.greenstep.journal.JournalRepository;
-import com.natetreimer.greenstep.journal.JournalService;
+import com.natetreimer.greenstep.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +12,9 @@ public class JournalServiceImpl implements JournalService {
 
     @Autowired
     private JournalRepository journalRepository;
+
+    @Override
+    public List<Journal> getJournalByUser(User user) {return journalRepository.findJournalByUser(user); }
 
     @Override
     public List<Journal> getAllJournals() {
